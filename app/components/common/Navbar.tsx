@@ -29,19 +29,20 @@ export default function Navbar() {
 
         {/* DESKTOP MENU */}
         <nav className="hidden md:flex items-center gap-10 font-poppins text-brand-black">
-          {navLinks.map((link) => (
-         <Link
+  {navLinks.map((link) => (
+    <Link
   key={link.name}
   href={link.href}
-  className="relative group text-brand-black transition-all duration-300 group-hover:w-full"
+  className="group"
 >
-              {link.name}
+  <span className="text-brand-black transition-colors duration-300 hover:text-[#CCFF66]">
+    {link.name}
+  </span>
 
-              {/* underline */}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          ))}
-        </nav>
+  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#CCFF66] transition-all duration-300 group-hover:w-full"></span>
+</Link>
+  ))}
+</nav>
 
         {/* MOBILE BUTTON */}
         <button
