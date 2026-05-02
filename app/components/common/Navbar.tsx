@@ -28,19 +28,21 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden md:flex items-center gap-10 font-poppins text-brand-black">
+     <nav className="hidden md:flex items-center gap-10 font-poppins text-brand-black">
   {navLinks.map((link) => (
     <Link
-  key={link.name}
-  href={link.href}
-  className="group"
->
-  <span className="text-brand-black transition-colors duration-300 hover:text-[#CCFF66]">
-    {link.name}
-  </span>
+      key={link.name}
+      href={link.href}
+      className="relative group inline-block"
+    >
+      {/* TEXT */}
+      <span className="block transition-colors duration-300 group-hover:text-[#CCFF66]">
+        {link.name}
+      </span>
 
-  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#CCFF66] transition-all duration-300 group-hover:w-full"></span>
-</Link>
+      {/* UNDERLINE */}
+      <span className="absolute left-0 bottom-0 h-[2px] w-full bg-[#CCFF66] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+    </Link>
   ))}
 </nav>
 
